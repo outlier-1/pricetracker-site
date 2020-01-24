@@ -1,0 +1,72 @@
+{% load static %}
+<html>
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"
+          id="bootstrap-css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="{% static "accounts/style.css" %}">
+</head>
+<body>
+<div class="container">
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <h4 class="card-title mt-3 text-center">Hesap Oluştur</h4> <hr>
+
+            <!--<p class="text-center">Get started with your free account</p>
+            <p>
+                <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i>   Login via Twitter</a>
+                <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i>   Login via facebook</a>
+            </p>
+            <p class="divider-text">
+                <span class="bg-light">OR</span>
+            </p>
+            -->
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    {{ form.full_name }}
+                </div> <!-- form-group// FULL_NAME -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    {{ form.email }}
+                </div> <!-- form-group// EMAIL -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-calendar"></i> </span>
+                    </div>
+                    {{ form.birth_date }}
+                </div> <!-- form-group// DATE OF BIRTH -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    {{ form.password1 }}
+                </div> <!-- form-group// PASSWORD1 -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    {{ form.password2 }}
+                </div> <!-- form-group// PASSWORD2 -->
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block"> Hesap Oluştur</button>
+                </div> <!-- form-group// -->
+                <p class="text-center">Zaten bir hesabınız var mı? <a href="">Giriş Yapın</a></p>
+            </form>
+        </article>
+    </div> <!-- card.// -->
+</div>
+<!--container end.//-->
+</body>
+
+
+</html>

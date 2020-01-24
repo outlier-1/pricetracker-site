@@ -7,6 +7,9 @@ class Website(models.Model):
     name = models.CharField(max_length=50)
     url = models.URLField(max_length=120)
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         db_table = 'website'
 
@@ -14,6 +17,9 @@ class Website(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.name
 
 
 class Product(models.Model):
@@ -24,6 +30,9 @@ class Product(models.Model):
     current_price = models.DecimalField(max_digits=6, decimal_places=2, null=True)
     url = models.URLField(max_length=250)
     active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         db_table = 'product'
@@ -46,3 +55,6 @@ class Track(models.Model):
 
     class Meta:
         db_table = 'track'
+
+    def __str__(self):
+        return self.user
