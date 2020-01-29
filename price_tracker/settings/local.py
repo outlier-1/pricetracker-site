@@ -59,7 +59,8 @@ ROOT_URLCONF = 'price_tracker.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'accounts/templates'),
+                 os.path.join(BASE_DIR, 'tracker/templates')]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -126,5 +127,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "accounts/static/"),
+    os.path.join(BASE_DIR, "tracker/static/"),
     '/var/www/static/',
 ]
